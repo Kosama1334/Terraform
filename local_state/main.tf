@@ -14,12 +14,28 @@ provider "aws" {
   region = "us-east-1"
 }
 
+# Data Source Block
+
+data "aws_ami" "amazon_linux" {
+  most_recent = true
+  owners = ["amazon"]
+  filter {
+    name = "name"
+    values = ["Amazon Linux*"]
+  }
+  filter {
+    name = "FreeTierEligible"
+    values = ["true"]
+  }
+}
+
+
 # Resource blocks
 resource "aws_instance" "tf_first_instance" {
-  ami = "ami-0fa3fe0fa7920f68e"
-  instance_type = "t2.micro"
+  ami = data.aws_ami.amazon_linux.id
+  instance_type = var.instance_type
 
   tags = {
-    Name = "TF_first_instance"
+    Name = var.instance_name
   }
 }
