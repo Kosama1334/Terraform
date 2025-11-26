@@ -21,11 +21,15 @@ data "aws_ami" "amazon_linux" {
   owners = ["amazon"]
   filter {
     name = "name"
-    values = ["Amazon Linux*"]
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
   }
   filter {
-    name = "FreeTierEligible"
-    values = ["true"]
+    name = "architecture"
+    values = ["x86_64"]
+  }
+  filter {
+    name = "virualization-type"
+    values = ["hvm"]
   }
 }
 
