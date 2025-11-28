@@ -4,7 +4,7 @@
 
 **DynamoDB table used for state locking and consistency**
 
-<img width="1919" height="961" alt="image" src="https://github.com/user-attachments/assets/760e0fda-ddde-49c8-aae3-8600cd72f1e5" />
+<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/760e0fda-ddde-49c8-aae3-8600cd72f1e5" />
 
 
 ```
